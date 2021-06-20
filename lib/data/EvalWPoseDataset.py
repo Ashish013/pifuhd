@@ -228,7 +228,7 @@ class EvalWPoseDataset(Dataset):
             if self.opt.crop_type == 'fullbody' and sum(flags) < 15:
                 print('Waring: not sufficient keypoints.')
 
-        im = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
+        im = cv2.imread(img_path)
         if im.shape[2] == 4:
             im = im / 255.0
             im[:,:,:3] /= im[:,:,3:] + 1e-8
