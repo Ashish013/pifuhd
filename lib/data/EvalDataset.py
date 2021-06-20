@@ -72,7 +72,7 @@ class EvalDataset(Dataset):
         # Name
         img_name = os.path.splitext(os.path.basename(img_path))[0]
 
-        im = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
+        im = cv2.imread(img_path)
         if im.shape[2] == 4:
             im = im / 255.0
             im[:,:,:3] /= im[:,:,3:] + 1e-8
